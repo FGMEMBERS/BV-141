@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/BV-141/bv141-splash.rgb</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/BV-141/Sounds/bv141-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/BV-141/Models/bv141.xml</path>
+    </model>
+
+    <help>
+      <title>Blohm Und Voss BV 141</title>
+    </help>
+
+  </sim>
+ 
+  <input>
+    <keyboard include="Nasal/bv141-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <bv141>
+      <file>Aircraft/BV-141/Nasal/doors.nas</file>
+    </bv141>
+  </nasal>
+   
+</PropertyList>

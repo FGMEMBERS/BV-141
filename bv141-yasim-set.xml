@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList include="bv141-base.xml">
+
+  <sim>
+
+    <description>Blohm und Voss BV141 (YASim)</description>
+    <author>BARANGER Emmanuel (3D)</author>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">bv141-yasim</aero>
+
+  </sim>
+
+</PropertyList>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!-- <PropertyList include="bv141-jsbsim-set.xml"> -->
+<PropertyList include="bv141-yasim-set.xml">
+
+  <sim>
+    <description>Blohm und Voss BV141</description>
+    <author>BARANGER Emmanuel (3D)</author>
+  </sim>
+
+</PropertyList>
+

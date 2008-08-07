@@ -4,10 +4,18 @@
 
   <path>bv-141.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/bv-141/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
-    <object-name>interieur</object-name>
     <object-name>pilote</object-name>
     <object-name>moteur</object-name>
     <object-name>aile</object-name>
@@ -32,7 +40,6 @@
     <object-name>voletC</object-name>
     <object-name>voletD</object-name>
 
-
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>propdisc</object-name>
@@ -46,16 +53,36 @@
     <object-name>propblur</object-name>
   </animation>
 
-  <!-- Pilote invisible depuis le cockpit -->
   <animation>
-    <type>select</type>
+    <type>material</type>
+    <object-name>fuselage</object-name>
     <object-name>pilote</object-name>
-    <condition>
-      <greater-than>
-        <property>/sim/current-view/view-number</property>
-        <value>0</value>
-      </greater-than>
-    </condition>
+    <object-name>moteur</object-name>
+    <object-name>aile</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>porteG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+    <object-name>bol</object-name>
+    <object-name>helice</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletC</object-name>
+    <object-name>voletD</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
   </animation>
 
   <animation>
@@ -65,6 +92,16 @@
     <object-name>helice</object-name>
     <object-name>bol</object-name>
   </animation>
+
+  <!-- Interieur -->
+  <model>
+    <path>Aircraft/BV-141/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
 
   <!-- L'hélice --> 
   <!-- Séléction de l'objet visible en fonction des rpm -->

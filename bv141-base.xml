@@ -10,7 +10,7 @@
     <fuel-fraction>1.0</fuel-fraction>
 
     <startup>
-      <splash-texture>Aircraft/BV-141/bv141-splash.rgb</splash-texture>
+      <splash-texture>Aircraft/BV-141/bv141-splash.png</splash-texture>
     </startup>
 
     <sound>
@@ -19,11 +19,28 @@
 
     <model>
       <path archive="y">Aircraft/BV-141/Models/bv141.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
     </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
 
     <help>
       <title>Blohm Und Voss BV 141</title>
     </help>
+
+    <menubar include="Dialogs/bv141-menu.xml"/>
 
   </sim>
  
@@ -34,6 +51,7 @@
   <nasal>
     <bv141>
       <file>Aircraft/BV-141/Nasal/doors.nas</file>
+      <file>Aircraft/BV-141/Nasal/liveries.nas</file>
     </bv141>
   </nasal>
    

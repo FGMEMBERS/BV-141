@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/BV-141/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -4.575 </x-m>
+      <y-m>  1.611 </y-m>
+      <z-m>  0.067 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

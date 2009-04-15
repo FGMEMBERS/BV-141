@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -40,6 +40,7 @@
     <object-name>voletC</object-name>
     <object-name>voletD</object-name>
     <object-name>bmw</object-name>
+    <object-name>trous</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -88,6 +89,7 @@
     <object-name>voletC</object-name>
     <object-name>voletD</object-name>
     <object-name>bmw</object-name>
+    <object-name>trous</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>

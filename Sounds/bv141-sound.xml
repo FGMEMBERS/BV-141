@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
  
 <PropertyList>
 
@@ -11,6 +11,8 @@
    <volume>
     <offset>0.4</offset>
    </volume>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </crank>
 
   <crank>
@@ -26,6 +28,8 @@
    <volume>
     <offset>0.5</offset>
    </volume>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </crank>
 
   <crank>
@@ -35,6 +39,8 @@
    <volume>
     <offset>0.3</offset>
    </volume>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </crank>
 
   <engine>
@@ -66,6 +72,8 @@
     <max>2.0</max>
     <offset>0.15</offset>
    </pitch>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </engine>
 
   <propeller>
@@ -90,6 +98,8 @@
     <max>2.0</max>
     <offset>0.9</offset>
    </pitch>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </propeller>
 
   <rumble>
@@ -102,13 +112,14 @@
      <property>/gear/gear[1]/wow</property>
      <property>/gear/gear[2]/wow</property>
     </or>
-    <!-- <property>/sim/current-view/internal</property> -->
    </condition>
    <volume>
     <property>/velocities/airspeed-kt</property>
     <type>log</type>
     <factor>0.25</factor>
    </volume>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </rumble>
 
 
@@ -117,6 +128,8 @@
    <mode>in-transit</mode>
    <path>Sounds/gear.wav</path>
    <property>/gear/gear[0]/position-norm</property>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </gear>
 
   <gear>
@@ -128,6 +141,8 @@
      <value>0.9</value>
     </greater-than>
    </condition>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </gear>
 
   <gear>
@@ -201,6 +216,8 @@
     <factor>0.0025</factor>
     <offset>1.2</offset>
    </pitch>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </squeal>
 
   <flap>
@@ -259,6 +276,8 @@
     <factor>0.0035</factor>
     <offset>1.25</offset>
    </pitch>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
   </wind>
  
   <stall>
@@ -289,7 +308,6 @@
    <max-dist>20.0</max-dist>
   </stall>
 
- <!--                  Toggle Switches                  -->     
       <click> 
         <name>Battery on</name>
         <path>Sounds/click.wav</path>

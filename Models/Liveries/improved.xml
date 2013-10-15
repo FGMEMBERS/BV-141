@@ -1,14 +1,16 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <!-- Improved BV-141 livery by Hind <foxhind@gmail.com> -->
 <PropertyList>
 
   <sim>
+    
     <model>
       <livery>
         <name type="string">Improved</name>
         <texture>Liveries/improved.png</texture>
         <specular>
-          <red>   0.8 </red>
+          <red>   0.80 </red>
           <green> 0.88 </green>
           <blue>  0.64 </blue>
         </specular>
@@ -19,6 +21,7 @@
         </emission>
       </livery>
     </model>
+    
   </sim>
 
 </PropertyList>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -7,46 +7,162 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/bv-141/Models/Liveries", 10);
+      
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
-    <object-name>pilote</object-name>
     <object-name>moteur</object-name>
+    <object-name>capotGH</object-name>
+    <object-name>capotGB</object-name>
+    <object-name>capotDH</object-name>
+    <object-name>capotDB</object-name>
     <object-name>aile</object-name>
     <object-name>derive</object-name>
     <object-name>profondeur</object-name>
     <object-name>direction</object-name>
     <object-name>porteG</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteD</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
     <object-name>bol</object-name>
-    <object-name>helice</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletC</object-name>
     <object-name>voletD</object-name>
-    <object-name>bmw</object-name>
+    
     <object-name>trous</object-name>
-
+    <object-name>echappes</object-name>
+    <object-name>helice</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>moteur</object-name>
+    <object-name>capotGH</object-name>
+    <object-name>capotGB</object-name>
+    <object-name>capotDH</object-name>
+    <object-name>capotDB</object-name>
+    <object-name>aile</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>bol</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletC</object-name>
+    <object-name>voletD</object-name>
+    
+    <object-name>trous</object-name>
+    <object-name>echappes</object-name>
+    <object-name>helice</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+    
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>moteur</object-name>
+    <object-name>capotGH</object-name>
+    <object-name>capotGB</object-name>
+    <object-name>capotDH</object-name>
+    <object-name>capotDB</object-name>
+    <object-name>aile</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>bol</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletC</object-name>
+    <object-name>voletD</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>moteur</object-name>
+    <object-name>capotGH</object-name>
+    <object-name>capotGB</object-name>
+    <object-name>capotDH</object-name>
+    <object-name>capotDB</object-name>
+    <object-name>aile</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>bol</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletC</object-name>
+    <object-name>voletD</object-name>
+  </effect>
 
   <animation>
     <type>shader</type>
@@ -62,69 +178,210 @@
     <object-name>propblur</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </effect>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/BV-141/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -2.2 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Interieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/BV-141/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
   <animation>
-    <type>material</type>
-    <object-name>fuselage</object-name>
-    <object-name>pilote</object-name>
-    <object-name>moteur</object-name>
-    <object-name>aile</object-name>
-    <object-name>derive</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>porteG</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>porteD</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
-    <object-name>bol</object-name>
-    <object-name>helice</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletG</object-name>
-    <object-name>voletC</object-name>
-    <object-name>voletD</object-name>
-    <object-name>bmw</object-name>
-    <object-name>trous</object-name>
-
-    <property-base>sim/model/livery</property-base>
-    <texture-prop>texture</texture-prop>
-    <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
   </animation>
 
+  <!-- BMW 801 -->
+  <model>
+    <path>Aircraft/BV-141/Models/Engines/engine.xml</path>
+    <offsets>
+      <x-m> -4.22823 </x-m>
+      <y-m> -0.55200 </y-m>
+      <z-m> -0.11983 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -0.97412 </y-m>
+      <z-m>  0.28111 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -1.05545 </y-m>
+      <z-m>  0.16368 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -1.10484 </y-m>
+      <z-m>  0.02693 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -1.11901 </y-m>
+      <z-m> -0.11983 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -1.10484 </y-m>
+      <z-m> -0.26658 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -1.05545 </y-m>
+      <z-m> -0.40333 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -0.97412 </y-m>
+      <z-m> -0.52076 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Right -->
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -0.12988 </y-m>
+      <z-m>  0.28111 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -0.04855 </y-m>
+      <z-m>  0.16368 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m>  0.00084 </y-m>
+      <z-m>  0.02693 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m>  0.01501 </y-m>
+      <z-m> -0.11983 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m>  0.00084 </y-m>
+      <z-m> -0.26658 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m>  0.04855 </y-m>
+      <z-m> -0.40333 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.57051 </x-m>
+      <y-m> -0.12988 </y-m>
+      <z-m> -0.52076 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Ground effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.883 </x-m>
+      <y-m> -2.249 </y-m>
+      <z-m> -2.438 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Right -->
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -2.883 </x-m>
+      <y-m>  2.249 </y-m>
+      <z-m> -2.438 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Rear -->
+  <model>
+    <path>Aircraft/BV-141/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  4.058 </x-m>
+      <y-m>  0.552 </y-m>
+      <z-m> -0.717 </z-m>
+    </offsets>
+  </model>
+
+  <!-- L'hélice --> 
   <animation>
     <name>HeliceComplete</name>
     <object-name>propdisc</object-name>
@@ -133,17 +390,6 @@
     <object-name>bol</object-name>
   </animation>
 
-  <!-- Interieur -->
-  <model>
-    <path>Aircraft/BV-141/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model>
-
-  <!-- L'hélice --> 
   <!-- Séléction de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
@@ -187,12 +433,18 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>/engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
-      <x-m> -5.604 </x-m>
-      <y-m> -0.552 </y-m>
-      <z-m> -0.120 </z-m>
+      <x-m> -4.74311 </x-m>
+      <y-m> -0.55200 </y-m>
+      <z-m> -0.12000 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -208,9 +460,9 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>20</factor>
     <center>
-      <x-m>  3.523 </x-m>
-      <y-m> -0.552 </y-m>
-      <z-m>  0.288 </z-m>
+      <x-m>  4.41807 </x-m>
+      <y-m> -0.55200 </y-m>
+      <z-m>  0.28820 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -224,14 +476,14 @@
     <type>rotate</type>
     <object-name>aileronG</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> 15 </factor>
     <axis>
-      <x1-m> -2.071 </x1-m>
-      <y1-m> -4.483 </y1-m>
-      <z1-m> -0.108 </z1-m>
-      <x2-m> -2.445 </x2-m>
-      <y2-m> -7.429 </y2-m>
-      <z2-m>  0.216 </z2-m>
+      <x1-m> -1.54876 </x1-m>
+      <y1-m> -7.42924 </y1-m>
+      <z1-m>  0.21648 </z1-m>
+      <x2-m> -1.15410 </x2-m>
+      <y2-m> -4.48298 </y2-m>
+      <z2-m> -0.10800 </z2-m>
     </axis>
   </animation> 
 
@@ -239,14 +491,14 @@
     <type>rotate</type>
     <object-name>aileronD</object-name>
     <property>surface-positions/right-aileron-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> 15 </factor>
     <axis>
-      <x1-m> -2.445 </x1-m>
-      <y1-m>  7.429 </y1-m>
-      <z1-m>  0.216 </z1-m>
-      <x2-m> -2.071 </x2-m>
-      <y2-m>  4.483 </y2-m>
-      <z2-m> -0.108 </z2-m>
+      <x1-m> -1.15410 </x1-m>
+      <y1-m>  4.48298 </y1-m>
+      <z1-m> -0.10800 </z1-m>
+      <x2-m> -1.54876 </x2-m>
+      <y2-m>  7.42924 </y2-m>
+      <z2-m>  0.21648 </z2-m>
     </axis>
   </animation>
 
@@ -257,9 +509,9 @@
     <property>surface-positions/elevator-pos-norm</property>
     <factor>11</factor>
     <center>
-      <x-m>  3.068 </x-m>
-      <y-m> -0.551 </y-m>
-      <z-m>  0.724 </z-m>
+      <x-m>  3.95929 </x-m>
+      <y-m> -0.55147 </y-m>
+      <z-m>  0.72371 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -273,14 +525,14 @@
     <type>rotate</type>
     <object-name>voletG</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-45.0</factor>
+    <factor> 45 </factor>
     <axis>
-      <x1-m> -2.077 </x1-m>
-      <y1-m> -3.291 </y1-m>
-      <z1-m> -0.239 </z1-m>
-      <x2-m> -2.077 </x2-m>
-      <y2-m> -4.436 </y2-m>
-      <z2-m> -0.123 </z2-m>
+      <x1-m> -1.22669 </x1-m>
+      <y1-m> -4.43566 </y1-m>
+      <z1-m> -0.20227 </z1-m>
+      <x2-m> -1.22669 </x2-m>
+      <y2-m> -3.31851 </y2-m>
+      <z2-m> -0.33728 </z2-m>
     </axis>
   </animation>
 
@@ -290,9 +542,9 @@
     <property>surface-positions/flap-pos-norm</property>
     <factor>45.0</factor>
     <center>
-      <x-m> -2.077 </x-m>
-      <y-m>  0.494 </y-m>
-      <z-m> -0.240 </z-m>
+      <x-m> -1.22669 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.33835 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -305,14 +557,14 @@
     <type>rotate</type>
     <object-name>voletD</object-name>
     <property>surface-positions/flap-pos-norm</property>
-    <factor>-45.0</factor>
+    <factor> 45 </factor>
     <axis>
-      <x1-m> -2.077 </x1-m>
-      <y1-m>  4.436 </y1-m>
-      <z1-m> -0.123 </z1-m>
-      <x2-m> -2.077 </x2-m>
-      <y2-m>  3.291 </y2-m>
-      <z2-m> -0.239 </z2-m>
+      <x1-m> -1.22669 </x1-m>
+      <y1-m>  3.31851 </y1-m>
+      <z1-m> -0.33728 </z1-m>
+      <x2-m> -1.22669 </x2-m>
+      <y2-m>  4.43566 </y2-m>
+      <z2-m> -0.20227 </z2-m>
     </axis>
   </animation>
 
@@ -328,9 +580,9 @@
       <entry><ind> 0 </ind><dep> -97 </dep></entry>
     </interpolation>
     <center>
-      <x-m> -3.567 </x-m>
-      <y-m> -2.346 </y-m>
-      <z-m> -0.327 </z-m>
+      <x-m> -2.71717 </x-m>
+      <y-m> -2.34900 </y-m>
+      <z-m> -0.32740 </z-m>
     </center>
     <axis>
       <x>  1 </x>
@@ -350,9 +602,9 @@
       <entry><ind> 0 </ind><dep> -13 </dep></entry>
     </interpolation>
     <center>
-      <x-m> -3.567 </x-m>
-      <y-m> -2.346 </y-m>
-      <z-m> -0.327 </z-m>
+      <x-m> -2.71717 </x-m>
+      <y-m> -2.34900 </y-m>
+      <z-m> -0.32740 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -372,9 +624,9 @@
       <entry><ind> 0 </ind><dep> -97 </dep></entry>
     </interpolation>
     <center>
-      <x-m> -3.567 </x-m>
-      <y-m>  2.346 </y-m>
-      <z-m> -0.327 </z-m>
+      <x-m> -2.71717 </x-m>
+      <y-m>  2.34900 </y-m>
+      <z-m> -0.32740 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -394,9 +646,9 @@
       <entry><ind> 0 </ind><dep> 13 </dep></entry>
     </interpolation>
     <center>
-      <x-m> -3.567 </x-m>
-      <y-m>  2.346 </y-m>
-      <z-m> -0.327 </z-m>
+      <x-m> -2.71717 </x-m>
+      <y-m>  2.34900 </y-m>
+      <z-m> -0.32740 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -410,12 +662,17 @@
     <type>translate</type>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
-    <property>/gear/gear[0]/compression-norm</property>
+    <property>gear/gear[0]/compression-norm</property>
     <factor> 0.3 </factor>
+    <center>
+      <x-m> -2.82324 </x-m>
+      <y-m> -2.34900 </y-m>
+      <z-m> -1.30513 </z-m>
+    </center>
     <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
+      <x> 0.063809 </x>
+      <y> 0.000000 </y>
+      <z> 0.606196 </z>
     </axis>
   </animation>
 
@@ -423,24 +680,35 @@
     <type>translate</type>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
-    <property>/gear/gear[1]/compression-norm</property>
+    <property>gear/gear[1]/compression-norm</property>
     <factor> 0.3 </factor>
+    <center>
+      <x-m> -2.82324 </x-m>
+      <y-m>  2.34900 </y-m>
+      <z-m> -1.30513 </z-m>
+    </center>
     <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
+      <x> 0.063809 </x>
+      <y> 0.000000 </y>
+      <z> 0.606196 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>translate</type>
+    <type>rotation</type>
+    <object-name>axeAB</object-name>
     <object-name>roueA</object-name>
-    <property>/gear/gear[2]/compression-norm</property>
-    <factor> 0.3 </factor>
+    <property>gear/gear[2]/compression-norm</property>
+    <factor> 15 </factor>
+    <center>
+      <x-m>  3.76694 </x-m>
+      <y-m> -0.55200 </y-m>
+      <z-m> -0.17311 </z-m>
+    </center>
     <axis>
       <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -448,10 +716,10 @@
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
-    <property>/gear/gear[1]/rollspeed-ms</property>
+    <property>/gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -3.733 </x-m>
+      <x-m> -2.883 </x-m>
       <y-m> -2.349 </y-m>
       <z-m> -2.047 </z-m>
     </center>
@@ -468,7 +736,7 @@
     <property>/gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -3.733 </x-m>
+      <x-m> -2.883 </x-m>
       <y-m>  2.349 </y-m>
       <z-m> -2.047 </z-m>
     </center>
@@ -482,10 +750,10 @@
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
-    <property>/gear/gear[0]/rollspeed-ms</property>
+    <property>/gear/gear[2]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m>  3.208 </x-m>
+      <x-m>  4.058 </x-m>
       <y-m> -0.552 </y-m>
       <z-m> -0.556 </z-m>
     </center>
@@ -506,12 +774,12 @@
       <entry><ind> 1 </ind><dep> 99 </dep></entry>
     </interpolation>
     <axis>
-      <x1-m> -3.785 </x1-m>
-      <y1-m> -2.292 </y1-m>
-      <z1-m> -0.368 </z1-m>
-      <x2-m> -3.302 </x2-m>
-      <y2-m> -2.292 </y2-m>
-      <z2-m> -0.449 </z2-m>
+      <x1-m> -2.93537 </x1-m>
+      <y1-m> -2.29228 </y1-m>
+      <z1-m> -0.36751 </z1-m>
+      <x2-m> -2.69349 </x2-m>
+      <y2-m> -2.29228 </y2-m>
+      <z2-m> -0.42610 </z2-m>
     </axis>
   </animation>
 
@@ -524,14 +792,99 @@
       <entry><ind> 1 </ind><dep> 99 </dep></entry>
     </interpolation>
     <axis>
-      <x1-m> -3.302 </x1-m>
-      <y1-m>  2.292 </y1-m>
-      <z1-m> -0.449 </z1-m>
-      <x2-m> -3.785 </x2-m>
-      <y2-m>  2.292 </y2-m>
-      <z2-m> -0.368 </z2-m>
+      <x1-m> -2.69349 </x1-m>
+      <y1-m>  2.29228 </y1-m>
+      <z1-m> -0.42610 </z1-m>
+      <x2-m> -2.93537 </x2-m>
+      <y2-m>  2.29228 </y2-m>
+      <z2-m> -0.36751 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Engine doors --> 
+  <animation>
+    <type>pick</type>
+    <object-name>capotGH</object-name>
+    <object-name>capotGB</object-name>
+    <object-name>capotDH</object-name>
+    <object-name>capotDB</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>capotGH</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -100 </factor>
+    <center>
+      <x-m> -4.00956 </x-m>
+      <y-m> -0.66413 </y-m>
+      <z-m>  0.49708 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>capotGB</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> 100 </factor>
+    <center>
+      <x-m> -4.00956 </x-m>
+      <y-m> -0.87131 </y-m>
+      <z-m> -0.64281 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>capotDH</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> 100 </factor>
+    <center>
+      <x-m> -4.00956 </x-m>
+      <y-m> -0.43987 </y-m>
+      <z-m>  0.49707 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>capotDB</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -100 </factor>
+    <center>
+      <x-m> -4.00956 </x-m>
+      <y-m> -0.23269 </y-m>
+      <z-m> -0.64281 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
 </PropertyList>
-

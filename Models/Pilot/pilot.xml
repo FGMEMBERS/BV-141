@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -12,11 +12,10 @@
     <object-name>brasD</object-name>
     <object-name>avantbrasG</object-name>
     <object-name>avantbrasD</object-name>
-    <object-name>manche</object-name>
     <object-name>cuisseG</object-name>
     <object-name>cuisseD</object-name>
     <object-name>jambeG</object-name>
-    <object-name>jambed</object-name>
+    <object-name>jambeD</object-name>
     <object-name>piedG</object-name>
     <object-name>piedD</object-name>
     <object-name>masques</object-name>
@@ -36,16 +35,16 @@
     <type>rotate</type>
     <object-name>lunettes</object-name>
     <property>instrumentation/doors/crew/position-norm</property>
-    <factor> 45</factor>
+    <factor> 45 </factor>
     <center>
       <x-m> 0.273 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.470 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -55,14 +54,14 @@
     <property>controls/flight/elevator</property>
     <factor> -15 </factor> 
     <center>
-      <x-m>  0.300 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.307 </z-m>
+      <x-m> 0.300 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.307 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -70,16 +69,16 @@
     <type>rotate</type>
     <object-name>AnimeTete</object-name>
     <property>controls/flight/rudder</property>
-    <factor>-25</factor>
+    <factor> -25 </factor>
     <center>
-      <x-m>  0.300 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.307 </z-m>
+      <x-m> 0.300 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.307 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -87,18 +86,17 @@
     <type>rotate</type>
     <object-name>AnimeTete</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
-    <factor> -10.0</factor>
+    <factor> -10 </factor>
     <center>
-      <x-m>  0.300 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.307 </z-m>
+      <x-m> 0.300 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.307 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation> 
 
 </PropertyList>
-

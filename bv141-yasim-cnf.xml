@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList include="bv141-base.xml">
 
   <sim>
 
     <description>Blohm und Voss BV141 (YASim)</description>
-    <author>BARANGER Emmanuel (3D)</author>
+    <author>BARANGER Emmanuel (3D/FDM)</author>
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">bv141-yasim</aero>
 
